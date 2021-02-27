@@ -1,18 +1,3 @@
-// SSimDownscaler by Shiandow
-//
-// This library is free software; you can redistribute it and/or
-// modify it under the terms of the GNU Lesser General Public
-// License as published by the Free Software Foundation; either
-// version 3.0 of the License, or (at your option) any later version.
-// 
-// This library is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public
-// License along with this library.
-
 //!HOOK POSTKERNEL
 //!BIND HOOKED
 //!BIND PREKERNEL
@@ -20,7 +5,7 @@
 //!WIDTH NATIVE_CROPPED.w
 //!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
 //!COMPONENTS 3
-//!DESC SSimDownscaler calc L2 pass 1
+//!DESC TsubaDS calc L2 pass 1
 
 #define axis 1
 
@@ -60,7 +45,7 @@ vec4 hook() {
 //!SAVE L2
 //!WHEN NATIVE_CROPPED.w POSTKERNEL.w >
 //!COMPONENTS 3
-//!DESC SSimDownscaler calc L2 pass 2
+//!DESC TsubaDS calc L2 pass 2
 
 #define axis 0
 
@@ -97,7 +82,7 @@ vec4 hook() {
 //!SAVE M
 //!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
 //!COMPONENTS 3
-//!DESC SSimDownscaler calc Mean
+//!DESC TsubaDS calc Mean
 
 #define locality    8.0
 
@@ -157,7 +142,7 @@ vec4 hook() {
 //!SAVE R
 //!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
 //!COMPONENTS 3
-//!DESC SSimDownscaler calc R
+//!DESC TsubaDS calc R
 
 #define locality    8.0
 
@@ -217,7 +202,7 @@ vec4 hook() {
 //!BIND M
 //!BIND R
 //!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
-//!DESC SSimDownscaler final pass
+//!DESC TsubaDS final pass
 
 #define locality    8.0
 
